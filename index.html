@@ -269,6 +269,44 @@ prettify(p2_sx)
 ---
 
 .left-column[
+## Calendar-based vis
+### - construction
+### - the args
+### - usage
+]
+.right-column[
+## Naturally work with the `group_by()`
+```r
+facet_cal &lt;- subdat %&gt;% 
+  group_by(Sensor) %&gt;% 
+* frame_calendar(
+*   x = Time, y = Count, date = Date, nrow = 2
+* )
+
+p_facet &lt;- facet_cal %&gt;% 
+  ggplot(aes(x = .Time, y = .Count, group = Date)) +
+  geom_line(aes(colour = Sensor)) +
+  facet_grid(Sensor ~ .) +
+  scale_colour_brewer(palette = "Dark2")
+prettify(p_facet, label = NULL)
+```
+]
+
+---
+
+.left-column[
+## Calendar-based vis
+### - construction
+### - the args
+### - usage
+]
+.right-column[
+## Faceted calendar plots
+&lt;img src="figure/facet-1.svg" style="display: block; margin: auto;" /&gt;
+]
+
+---
+.left-column[
 ## Special events
 ### - adele's concert
 ]
@@ -315,40 +353,42 @@ prettify(p2_sx)
 ---
 
 .left-column[
-## Calendar-based vis
-### - construction
-### - the args
-### - usage
+## Showcases
+### - electricity consumption
 ]
 .right-column[
-## Naturally work with the `group_by()`
-```r
-facet_cal &lt;- subdat %&gt;% 
-  group_by(Sensor) %&gt;% 
-* frame_calendar(
-*   x = Time, y = Count, date = Date, nrow = 2
-* )
-
-p_facet &lt;- facet_cal %&gt;% 
-  ggplot(aes(x = .Time, y = .Count, group = Date)) +
-  geom_line(aes(colour = Sensor)) +
-  facet_grid(Sensor ~ .) +
-  scale_colour_brewer(palette = "Dark2")
-prettify(p_facet, label = NULL)
-```
+![elec](img/elec-consumption.png)
+.red[.footnote[Reference: **Roach, C** (forthcoming 2018). Assessing the impact of building characteristics on energy consumption using semiparametric mixed models.]]
 ]
 
 ---
 
 .left-column[
-## Calendar-based vis
-### - construction
-### - the args
-### - usage
+## Showcases
+### - electricity consumption
+### - bus delays
 ]
 .right-column[
-## Faceted calendar plots
-&lt;img src="figure/facet-1.svg" style="display: block; margin: auto;" /&gt;
+&lt;br&gt;
+&lt;br&gt;
+&lt;br&gt;
+![bus](img/bus-delay.jpg)
+.red[.footnote[Reference: [Tom Elliott's tweet](https://twitter.com/tomelliottnz/status/958887861943640064)]]
+]
+
+---
+
+.left-column[
+## Showcases
+### - electricity consumption
+### - bus delays
+### - web traffic
+]
+.right-column[
+&lt;br&gt;
+&lt;br&gt;
+![bus](img/web.png)
+.red[.footnote[Reference: [Rで解析：時系列データをカレンダー形式にプロット「sugrrants」パッケージ](https://www.karada-good.net/analyticsr/r-620)]]
 ]
 
 ---
