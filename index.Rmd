@@ -2,7 +2,7 @@
 title: "`r icon::fa_calendar()` Calendar-based Graphics <br> for <br> Visualizing People’s Daily Schedules"
 type: "invited"
 author: "Earo Wang <br><br> <i class='fa fa-university' aria-hidden='true'></i> Monash University"
-date: "Feb 09, 2018 <br> slides at <https://slides.earo.me/gwg18>"
+date: "Feb 09, 2018 <br> slides at <http://slides.earo.me/gwg18>"
 output:
   xaringan::moon_reader:
     css: ["default", "myremark.css"]
@@ -353,6 +353,6 @@ prettify(p_facet, label = NULL)
 
 class: inverse middle center
 
-### Slides: <https://slides.earo.me/gwg18>
+### Slides: <http://slides.earo.me/gwg18>
 ### Source code: <https://github.com/earowang/gwg18>
 ### This work is under licensed [CC BY-NC 4.0](https://creativecommons.org/licenses/by-nc/4.0/).
