@@ -123,8 +123,11 @@ p3_sx <- pedestrian %>%
     Sensor == "Southern Cross Station",
     Date >= as_date("2017-03-01"), Date <= as_date("2017-03-31")
   ) %>% 
+  mutate(Adele = if_else(
+    Date %in% as_date(c("2017-03-18", "2017-03-19")), TRUE, FALSE
+  )) %>% 
   frame_calendar(x = Time, y = Count, date = Date) %>% 
-  ggplot(aes(.Time, .Count, group = Date, colour = Holiday)) +
+  ggplot(aes(.Time, .Count, group = Date, colour = Adele)) +
   geom_line() +
   theme_remark()
 prettify(p3_sx, label = c("label", "text", "text2"), size = 5)
